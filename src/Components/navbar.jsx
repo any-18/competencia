@@ -11,6 +11,7 @@ import Tooltip from '@mui/material/Tooltip';
 import FolderIcon from '@mui/icons-material/Shop';
 //import Settings from '@mui/icons-material/Settings';
 //import Logout from '@mui/icons-material/Logout';
+import Cart from './CartWidget';
 
 function Navbar() {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -88,6 +89,10 @@ function Navbar() {
             <Avatar /> Zapatillas
           </MenuItem>
         </Menu>
+        <MenuItem>
+        <Cart></Cart>
+        </MenuItem>
+        
       </React.Fragment>
     );
 };
