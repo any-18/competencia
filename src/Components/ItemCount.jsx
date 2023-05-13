@@ -1,23 +1,21 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 
-function ItemCount({initial, stock, onAdd}) {
+function ItemCount({initial, horas, onAdd}) {
     const[qty, setQty] = useState(initial)
 
     const handleAdd = () =>{
-        if(qty < stock) {
+        if(qty < horas) {
             setQty(qty + 1)
         }
     }
 
     const handleSubstract = () => {
-        if (qty > 0) {
+        if (qty > 5) {
             setQty(qty - 1)
         }
     }
@@ -25,15 +23,7 @@ function ItemCount({initial, stock, onAdd}) {
     
   return (
     <Card sx={{ display: 'flex' }}>
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-        <CardContent sx={{ flex: '1 0 auto' }}>
-          <Typography component="div" variant="h5">
-            Camiseta Lila
-          </Typography>
-          <Typography variant="subtitle1" color="text.secondary" component="div">
-            XS - S - M - L
-          </Typography>
-        </CardContent>
+      <Box sx={{ display: 'flex' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
           <IconButton aria-label="menos" onClick={handleSubstract}>
             -
@@ -51,12 +41,6 @@ function ItemCount({initial, stock, onAdd}) {
           </IconButton>
         </Box>
       </Box>
-      <CardMedia
-        component="img"
-        sx={{ width: 151 }}
-        image="../Imgs/jpglany2.jpg"
-        alt="Live from space album cover"
-      />
     </Card>
   );
 };
