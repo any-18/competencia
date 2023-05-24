@@ -11,7 +11,7 @@ function ItemListContainer(props) {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 return resolve(Usuarios)
-            }, 500)
+            }, 700)
         })
     }
     useEffect(() => {
